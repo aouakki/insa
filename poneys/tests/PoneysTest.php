@@ -47,5 +47,16 @@ class PoneysTest extends TestCase
             ] ; 
     }
     
+    public function testGetNames(){
+
+        $stub = $this->createMock(Poneys::class);
+
+        $stub->method('getNames')
+             ->willReturn(["poney1","poney2","poney3","poney4","poney5"]);
+
+             $this->assertInternalType('array', $stub->getNames());
+
+
+    }
 }
 ?>
