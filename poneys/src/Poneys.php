@@ -7,7 +7,7 @@
 class Poneys
 {
     private $_count = 8;
-
+    const MAX_COUNT = 15 ; 
     /**
      * Retourne le nombre de poneys
      *
@@ -51,6 +51,15 @@ class Poneys
      */
     public function getNames(): array
     {
+
+    }
+
+    public function hasMorePoneys(): bool {
+
+        if ($this->_count>=MAX_COUNT)
+            return false ; 
+
+        return false ;
 
     }
 }
