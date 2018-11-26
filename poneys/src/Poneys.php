@@ -2,6 +2,8 @@
 /**
  * Gestion de poneys
  */
+
+ include_once 'NegativePoneysCountException.php' ; 
 class Poneys
 {
     private $_count = 8;
@@ -26,8 +28,22 @@ class Poneys
     public function removePoneyFromField(int $number): void
     {
         $this->_count -= $number;
+        if($this->_count<0)
+            throw new NegativePoneysCountException(); 
     }
 
+
+     /**
+     * ajoute un poney du champ
+     *
+     * @param int $number Nombre de poneys à retirer
+     *
+     * @return void
+     */
+    public function addPoneyFromField(int $number): void
+    {
+        $this->_count += $number;
+    }
     /**
      * Retourne les noms des poneys
      *
